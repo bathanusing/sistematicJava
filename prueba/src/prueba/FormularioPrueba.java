@@ -14,7 +14,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
@@ -33,6 +35,7 @@ public class FormularioPrueba extends javax.swing.JFrame {
 
     DefaultListModel modelo = new DefaultListModel();
     Utilitarios util = new Utilitarios();
+
     /**
      * Creates new form FormularioPrueba
      */
@@ -59,7 +62,7 @@ public class FormularioPrueba extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        ComboMoneda = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
@@ -74,6 +77,7 @@ public class FormularioPrueba extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         jButton2 = new javax.swing.JButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        btnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 204, 255));
@@ -98,10 +102,10 @@ public class FormularioPrueba extends javax.swing.JFrame {
 
         jLabel10.setText("Moneda");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "US$", "S/" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        ComboMoneda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "US$", "S/" }));
+        ComboMoneda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                ComboMonedaActionPerformed(evt);
             }
         });
 
@@ -189,6 +193,13 @@ public class FormularioPrueba extends javax.swing.JFrame {
             }
         });
 
+        btnBuscar.setText("Buscar Todos");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -200,6 +211,8 @@ public class FormularioPrueba extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnBuscar)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)
@@ -237,15 +250,14 @@ public class FormularioPrueba extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                 .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                                                    .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                                                    .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                                                .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                                                .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING))
                                             .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 147, Short.MAX_VALUE)))))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ComboMoneda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
@@ -274,7 +286,7 @@ public class FormularioPrueba extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(11, 11, 11)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -294,18 +306,19 @@ public class FormularioPrueba extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboMoneda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2)
+                    .addComponent(btnBuscar))
                 .addGap(18, 18, 18))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void ComboMonedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboMonedaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_ComboMonedaActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -371,6 +384,16 @@ public class FormularioPrueba extends javax.swing.JFrame {
             evt.consume();
     }//GEN-LAST:event_jTextField8KeyTyped
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        try {
+            rellenarLista();
+        } catch (SQLException ex) {
+            Logger.getLogger(FormularioPrueba.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DAOCustomException ex) {
+            Logger.getLogger(FormularioPrueba.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -407,9 +430,10 @@ public class FormularioPrueba extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ComboMoneda;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -440,14 +464,14 @@ public class FormularioPrueba extends javax.swing.JFrame {
                 && jTextField2 != null && jTextField2.getText().length() > 0
                 && jTextField3 != null && jTextField3.getText().length() > 0
                 && jTextField4 != null && jTextField4.getText().length() > 0
-//                | jTextField5 != null && jTextField5.getText().length() > 0
+                //                | jTextField5 != null && jTextField5.getText().length() > 0
                 && jTextField6 != null && jTextField6.getText().length() > 0
                 && jTextField7 != null && jTextField7.getText().length() > 0
                 && jTextField8 != null && jTextField8.getText().length() > 0
                 && jTextField9 != null && jTextField9.getText().length() > 0
-                && jDateChooser1!=null && jDateChooser1.getDate()!=null)) {
+                && jDateChooser1 != null && jDateChooser1.getDate() != null)) {
             try {
-                act = CrearActivosDeFormulario(jTextField1, jTextField2, jTextField3, jTextField4, jTextField6, jTextField7, jComboBox1, jTextField8, jTextField9,jDateChooser1);
+                act = CrearActivosDeFormulario(jTextField1, jTextField2, jTextField3, jTextField4, jTextField6, jTextField7, ComboMoneda, jTextField8, jTextField9, jDateChooser1);
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/sistematic_net1", "juan", "juan123");
                 ActivosDao dao = new MySQLActivosDao(con);
 
@@ -463,7 +487,7 @@ public class FormularioPrueba extends javax.swing.JFrame {
                                 dao.insert(act);
 //                                VaciarCampos();
                                 JOptionPane.showMessageDialog(null, "Articulo Modificado exitosamente");
-                                
+
                             } else {
                                 JOptionPane.showMessageDialog(null, "No se modifico el articulo");
                             }
@@ -498,14 +522,14 @@ public class FormularioPrueba extends javax.swing.JFrame {
                 && jTextField2 != null && jTextField2.getText().length() > 0
                 && jTextField3 != null && jTextField3.getText().length() > 0
                 && jTextField4 != null && jTextField4.getText().length() > 0
-//                | jTextField5 != null && jTextField5.getText().length() > 0
+                //                | jTextField5 != null && jTextField5.getText().length() > 0
                 && jTextField6 != null && jTextField6.getText().length() > 0
                 && jTextField7 != null && jTextField7.getText().length() > 0
                 && jTextField8 != null && jTextField8.getText().length() > 0
                 && jTextField9 != null && jTextField9.getText().length() > 0
-                && jDateChooser1!=null && jDateChooser1.getDate()!=null)) {
+                && jDateChooser1 != null && jDateChooser1.getDate() != null)) {
             try {
-                act = CrearActivosDeFormulario(jTextField1, jTextField2, jTextField3, jTextField4, jTextField6, jTextField7, jComboBox1, jTextField8, jTextField9, jDateChooser1);
+                act = CrearActivosDeFormulario(jTextField1, jTextField2, jTextField3, jTextField4, jTextField6, jTextField7, ComboMoneda, jTextField8, jTextField9, jDateChooser1);
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/sistematic_net1", "juan", "juan123");
                 ActivosDao dao = new MySQLActivosDao(con);
 
@@ -527,7 +551,7 @@ public class FormularioPrueba extends javax.swing.JFrame {
                         Logger.getLogger(FormularioPrueba.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
-            }  catch (SQLException ex) {
+            } catch (SQLException ex) {
                 Logger.getLogger(FormularioPrueba.class.getName()).log(Level.SEVERE, null, ex);
             }
             {
@@ -572,6 +596,7 @@ public class FormularioPrueba extends javax.swing.JFrame {
         jTextField7.setText(String.valueOf(object.getPrecioAct()));
         jTextField8.setText(String.valueOf(object.getPeso()));
         jTextField9.setText(object.getUbicacion());
+        ComboMoneda.setSelectedItem(object.getMoneda());
     }
 
     private void VaciarCampos() {
@@ -585,6 +610,29 @@ public class FormularioPrueba extends javax.swing.JFrame {
         jTextField7.setText(String.valueOf(""));
         jTextField8.setText(String.valueOf(""));
         jTextField9.setText("");
+    }
+
+    private void rellenarLista() throws SQLException, DAOCustomException {
+
+        List<Activos> lista = new ArrayList<>();
+
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/sistematic_net1", "juan", "juan123");
+        ActivosDao dao = new MySQLActivosDao(con);
+
+        if (con == null) {
+            JOptionPane.showMessageDialog(null, "No se realizo la conexion con la BD, chequea la conexion");
+        } else {
+            lista = dao.findAll();
+            if (lista.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "No hay nada que mostrar");
+            } else {
+                modelo.clear();
+                for (Activos act : lista) {
+                    modelo.addElement(act.getCodigo());
+                }
+                jList1.setModel(modelo);
+            }
+        }
     }
 
 }
