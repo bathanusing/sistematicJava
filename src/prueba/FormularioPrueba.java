@@ -41,6 +41,7 @@ public class FormularioPrueba extends javax.swing.JFrame {
      */
     public FormularioPrueba() {
         initComponents();
+       this.rellenarLista();
     }
 
     /**
