@@ -64,20 +64,21 @@ public class FormularioPrueba extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         ComboMoneda = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        textCodigo = new javax.swing.JTextField();
+        textArticulo = new javax.swing.JTextField();
+        textNumero_ser = new javax.swing.JTextField();
+        textMarca = new javax.swing.JTextField();
+        textPrecio_com = new javax.swing.JTextField();
+        textPrecio_act = new javax.swing.JTextField();
+        textPeso = new javax.swing.JTextField();
+        textUbicacion = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jButton2 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        listCodigo = new javax.swing.JList<>();
+        btnArtNuevo = new javax.swing.JButton();
+        JDCfecha = new com.toedter.calendar.JDateChooser();
         btnBuscar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 204, 255));
@@ -120,76 +121,76 @@ public class FormularioPrueba extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTextField1.setToolTipText("Codigo Articulo");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        textCodigo.setToolTipText("Codigo Articulo");
+        textCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                textCodigoActionPerformed(evt);
             }
         });
 
-        jTextField2.setToolTipText("Nombre Articulo");
+        textArticulo.setToolTipText("Nombre Articulo");
 
-        jTextField3.setToolTipText("Numero de Serial");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        textNumero_ser.setToolTipText("Numero de Serial");
+        textNumero_ser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                textNumero_serActionPerformed(evt);
             }
         });
 
-        jTextField4.setToolTipText("Marca Articulo");
+        textMarca.setToolTipText("Marca Articulo");
 
-        jTextField6.setToolTipText("precio de venta");
-        jTextField6.addKeyListener(new java.awt.event.KeyAdapter() {
+        textPrecio_com.setToolTipText("precio de venta");
+        textPrecio_com.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField6KeyTyped(evt);
+                textPrecio_comKeyTyped(evt);
             }
         });
 
-        jTextField7.setToolTipText("Precio Actual");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        textPrecio_act.setToolTipText("Precio Actual");
+        textPrecio_act.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                textPrecio_actActionPerformed(evt);
             }
         });
-        jTextField7.addKeyListener(new java.awt.event.KeyAdapter() {
+        textPrecio_act.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField7KeyTyped(evt);
+                textPrecio_actKeyTyped(evt);
             }
         });
 
-        jTextField8.setToolTipText("Peso Articulo");
-        jTextField8.addKeyListener(new java.awt.event.KeyAdapter() {
+        textPeso.setToolTipText("Peso Articulo");
+        textPeso.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField8KeyTyped(evt);
+                textPesoKeyTyped(evt);
             }
         });
 
-        jTextField9.setToolTipText("Ubicacion en Almacen");
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        textUbicacion.setToolTipText("Ubicacion en Almacen");
+        textUbicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                textUbicacionActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
             }
         });
 
-        jList1.setToolTipText("Lista Articulos Agregados");
-        jList1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+        listCodigo.setToolTipText("Lista Articulos Agregados");
+        listCodigo.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                jList1ValueChanged(evt);
+                listCodigoValueChanged(evt);
             }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listCodigo);
 
-        jButton2.setText("Nuevo Articulo");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnArtNuevo.setText("Nuevo Articulo");
+        btnArtNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnArtNuevoActionPerformed(evt);
             }
         });
 
@@ -197,6 +198,13 @@ public class FormularioPrueba extends javax.swing.JFrame {
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
             }
         });
 
@@ -210,29 +218,8 @@ public class FormularioPrueba extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnBuscar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(59, 59, 59)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -245,20 +232,43 @@ public class FormularioPrueba extends javax.swing.JFrame {
                                     .addComponent(jLabel9))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField9)
+                                    .addComponent(textUbicacion)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                                                .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                                                .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
-                                                .addComponent(jTextField8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING))
-                                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 147, Short.MAX_VALUE)))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ComboMoneda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                                                .addComponent(textNumero_ser, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                                                .addComponent(textPrecio_com, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                                                .addComponent(textPrecio_act, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                                                .addComponent(textPeso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(textMarca, javax.swing.GroupLayout.Alignment.LEADING))
+                                            .addComponent(JDCfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(textCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(textArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(224, Short.MAX_VALUE)
+                        .addComponent(btnBuscar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnArtNuevo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnGuardar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ComboMoneda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,51 +277,58 @@ public class FormularioPrueba extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(textCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(textArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(btnSalir)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textNumero_ser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(3, 3, 3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JDCfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(11, 11, 11)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textPrecio_com, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textPrecio_act, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(textUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(ComboMoneda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnArtNuevo)
                     .addComponent(btnBuscar))
                 .addGap(18, 18, 18))
         );
+
+        btnSalir.getAccessibleContext().setAccessibleName("btnSalir");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -320,69 +337,69 @@ public class FormularioPrueba extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboMonedaActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCodigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textCodigoActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void textNumero_serActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNumero_serActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_textNumero_serActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         try {
             ejecutarUpdate();
         } catch (ParseException ex) {
             Logger.getLogger(FormularioPrueba.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnArtNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArtNuevoActionPerformed
 
         ejecutarInsert();
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnArtNuevoActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void textUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textUbicacionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_textUbicacionActionPerformed
 
-    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
+    private void listCodigoValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listCodigoValueChanged
         Connection con;
 
         try {
             con = DriverManager.getConnection("jdbc:mysql://localhost/sistematic_net1", "juan", "juan123");
             ActivosDao dao = new MySQLActivosDao(con);
-            String codigoSelect = jList1.getSelectedValue();
+            String codigoSelect = listCodigo.getSelectedValue();
             Activos act = dao.findByCode(codigoSelect);
             RellenarCampos(act);
         } catch (SQLException | DAOCustomException ex) {
             Logger.getLogger(FormularioPrueba.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }//GEN-LAST:event_jList1ValueChanged
+    }//GEN-LAST:event_listCodigoValueChanged
 
-    private void jTextField6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField6KeyTyped
+    private void textPrecio_comKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textPrecio_comKeyTyped
         char c = evt.getKeyChar();
         if (c < '0' || c > '9')
             evt.consume();
-    }//GEN-LAST:event_jTextField6KeyTyped
+    }//GEN-LAST:event_textPrecio_comKeyTyped
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void textPrecio_actActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textPrecio_actActionPerformed
 
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_textPrecio_actActionPerformed
 
-    private void jTextField7KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField7KeyTyped
+    private void textPrecio_actKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textPrecio_actKeyTyped
         char c = evt.getKeyChar();
         if (c < '0' || c > '9')
             evt.consume();
-    }//GEN-LAST:event_jTextField7KeyTyped
+    }//GEN-LAST:event_textPrecio_actKeyTyped
 
-    private void jTextField8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8KeyTyped
+    private void textPesoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textPesoKeyTyped
         char c = evt.getKeyChar();
         if (c < '0' || c > '9')
             evt.consume();
-    }//GEN-LAST:event_jTextField8KeyTyped
+    }//GEN-LAST:event_textPesoKeyTyped
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         try {
@@ -393,6 +410,13 @@ public class FormularioPrueba extends javax.swing.JFrame {
             Logger.getLogger(FormularioPrueba.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        if(JOptionPane.showConfirmDialog(null, "Realmente desea salir del Mantimiento tabla Productos?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)== 0){
+            dispose();
+        }
+
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -431,10 +455,11 @@ public class FormularioPrueba extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboMoneda;
+    private com.toedter.calendar.JDateChooser JDCfecha;
+    private javax.swing.JButton btnArtNuevo;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -445,33 +470,33 @@ public class FormularioPrueba extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JList<String> listCodigo;
+    private javax.swing.JTextField textArticulo;
+    private javax.swing.JTextField textCodigo;
+    private javax.swing.JTextField textMarca;
+    private javax.swing.JTextField textNumero_ser;
+    private javax.swing.JTextField textPeso;
+    private javax.swing.JTextField textPrecio_act;
+    private javax.swing.JTextField textPrecio_com;
+    private javax.swing.JTextField textUbicacion;
     // End of variables declaration//GEN-END:variables
 
     public void ejecutarInsert() {
         Activos act = null;
-        if ((jTextField1 != null && jTextField1.getText().length() > 0
-                && jTextField2 != null && jTextField2.getText().length() > 0
-                && jTextField3 != null && jTextField3.getText().length() > 0
-                && jTextField4 != null && jTextField4.getText().length() > 0
+        if ((textCodigo != null && textCodigo.getText().length() > 0
+                && textArticulo != null && textArticulo.getText().length() > 0
+                && textNumero_ser != null && textNumero_ser.getText().length() > 0
+                && textMarca != null && textMarca.getText().length() > 0
                 //                | jTextField5 != null && jTextField5.getText().length() > 0
-                && jTextField6 != null && jTextField6.getText().length() > 0
-                && jTextField7 != null && jTextField7.getText().length() > 0
-                && jTextField8 != null && jTextField8.getText().length() > 0
-                && jTextField9 != null && jTextField9.getText().length() > 0
-                && jDateChooser1 != null && jDateChooser1.getDate() != null)) {
+                && textPrecio_com != null && textPrecio_com.getText().length() > 0
+                && textPrecio_act != null && textPrecio_act.getText().length() > 0
+                && textPeso != null && textPeso.getText().length() > 0
+                && textUbicacion != null && textUbicacion.getText().length() > 0
+                && JDCfecha != null && JDCfecha.getDate() != null)) {
             try {
-                act = CrearActivosDeFormulario(jTextField1, jTextField2, jTextField3, jTextField4, jTextField6, jTextField7, ComboMoneda, jTextField8, jTextField9, jDateChooser1);
+                act = CrearActivosDeFormulario(textCodigo, textArticulo, textNumero_ser, textMarca, textPrecio_com, textPrecio_act, ComboMoneda, textPeso, textUbicacion, JDCfecha);
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/sistematic_net1", "juan", "juan123");
                 ActivosDao dao = new MySQLActivosDao(con);
 
@@ -494,7 +519,7 @@ public class FormularioPrueba extends javax.swing.JFrame {
                         } else {
                             dao.insert(act);
                             modelo.addElement(act.getCodigo());
-                            jList1.setModel(modelo);
+                            listCodigo.setModel(modelo);
 //                            VaciarCampos();
                         }
 
@@ -518,18 +543,18 @@ public class FormularioPrueba extends javax.swing.JFrame {
 
     private void ejecutarUpdate() throws ParseException {
         Activos act = null;
-        if ((jTextField1 != null && jTextField1.getText().length() > 0
-                && jTextField2 != null && jTextField2.getText().length() > 0
-                && jTextField3 != null && jTextField3.getText().length() > 0
-                && jTextField4 != null && jTextField4.getText().length() > 0
+        if ((textCodigo != null && textCodigo.getText().length() > 0
+                && textArticulo != null && textArticulo.getText().length() > 0
+                && textNumero_ser != null && textNumero_ser.getText().length() > 0
+                && textMarca != null && textMarca.getText().length() > 0
                 //                | jTextField5 != null && jTextField5.getText().length() > 0
-                && jTextField6 != null && jTextField6.getText().length() > 0
-                && jTextField7 != null && jTextField7.getText().length() > 0
-                && jTextField8 != null && jTextField8.getText().length() > 0
-                && jTextField9 != null && jTextField9.getText().length() > 0
-                && jDateChooser1 != null && jDateChooser1.getDate() != null)) {
+                && textPrecio_com != null && textPrecio_com.getText().length() > 0
+                && textPrecio_act != null && textPrecio_act.getText().length() > 0
+                && textPeso != null && textPeso.getText().length() > 0
+                && textUbicacion != null && textUbicacion.getText().length() > 0
+                && JDCfecha != null && JDCfecha.getDate() != null)) {
             try {
-                act = CrearActivosDeFormulario(jTextField1, jTextField2, jTextField3, jTextField4, jTextField6, jTextField7, ComboMoneda, jTextField8, jTextField9, jDateChooser1);
+                act = CrearActivosDeFormulario(textCodigo, textArticulo, textNumero_ser, textMarca, textPrecio_com, textPrecio_act, ComboMoneda, textPeso, textUbicacion, JDCfecha);
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/sistematic_net1", "juan", "juan123");
                 ActivosDao dao = new MySQLActivosDao(con);
 
@@ -585,31 +610,31 @@ public class FormularioPrueba extends javax.swing.JFrame {
     }
 
     private void RellenarCampos(Activos object) {
-        jTextField1.setText(object.getCodigo());
-        jTextField2.setText(object.getArticulo());
-        jTextField3.setText(object.getNumeroSer());
-        jTextField4.setText(object.getMarca());
+        textCodigo.setText(object.getCodigo());
+        textArticulo.setText(object.getArticulo());
+        textNumero_ser.setText(object.getNumeroSer());
+        textMarca.setText(object.getMarca());
 //        SimpleDateFormat parseador = new SimpleDateFormat("dd-MM-yyyy");
-        jDateChooser1.setDate(object.getFecha());
+        JDCfecha.setDate(object.getFecha());
 //        jTextField5.setText(parseador.format(object.getFecha()));
-        jTextField6.setText(String.valueOf(object.getPrecioCom()));
-        jTextField7.setText(String.valueOf(object.getPrecioAct()));
-        jTextField8.setText(String.valueOf(object.getPeso()));
-        jTextField9.setText(object.getUbicacion());
+        textPrecio_com.setText(String.valueOf(object.getPrecioCom()));
+        textPrecio_act.setText(String.valueOf(object.getPrecioAct()));
+        textPeso.setText(String.valueOf(object.getPeso()));
+        textUbicacion.setText(object.getUbicacion());
         ComboMoneda.setSelectedItem(object.getMoneda());
     }
 
     private void VaciarCampos() {
         Date fecha = new Date();
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        jTextField4.setText("");
+        textCodigo.setText("");
+        textArticulo.setText("");
+        textNumero_ser.setText("");
+        textMarca.setText("");
 //        jTextField5.setText("dd-MM-yyyy");
-        jTextField6.setText(String.valueOf(""));
-        jTextField7.setText(String.valueOf(""));
-        jTextField8.setText(String.valueOf(""));
-        jTextField9.setText("");
+        textPrecio_com.setText(String.valueOf(""));
+        textPrecio_act.setText(String.valueOf(""));
+        textPeso.setText(String.valueOf(""));
+        textUbicacion.setText("");
     }
 
     private void rellenarLista() throws SQLException, DAOCustomException {
@@ -630,7 +655,7 @@ public class FormularioPrueba extends javax.swing.JFrame {
                 for (Activos act : lista) {
                     modelo.addElement(act.getCodigo());
                 }
-                jList1.setModel(modelo);
+                listCodigo.setModel(modelo);
             }
         }
     }
